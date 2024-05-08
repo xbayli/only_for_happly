@@ -31,8 +31,9 @@ r = requests.get(
 d = json.loads(r.text)
 result2 = json.loads(r.text)['cityInfo']
 
+# d["cityInfo"]["parent"]} 该参数已取消，未做异常处理。
 msg = (
-    f' 城市：{d["cityInfo"]["parent"]} {d["cityInfo"]["city"]}\n'
+    f' 城市：{d["cityInfo"]["city"]}\n'
     f' 日期：{d["data"]["forecast"][0]["ymd"]} {d["data"]["forecast"][0]["week"]}\n'
     f' 天气：{d["data"]["forecast"][0]["type"]}\n'
     f' 温度：{d["data"]["forecast"][0]["high"]} {d["data"]["forecast"][0]["low"]}\n'
